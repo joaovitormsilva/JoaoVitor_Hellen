@@ -61,16 +61,23 @@ let currentIdx = 0;
 function moveCarousel(direction) {
     const track = document.getElementById('track1');
     const items = track.querySelectorAll('.carousel-item');
+    const captionElement = document.getElementById('caption1');
     const totalItems = items.length;
 
     currentIdx += direction;
 
+    // Lógica de loop infinito
     if (currentIdx >= totalItems) {
         currentIdx = 0;
     } else if (currentIdx < 0) {
         currentIdx = totalItems - 1;
     }
 
+    // Move o trilho das fotos
     const amountToMove = currentIdx * -100;
     track.style.transform = `translateX(${amountToMove}%)`;
+
+    // Atualiza a legenda com base no atributo 'data-caption' da foto atual
+    const currentCaption = items[currentIdx].getAttribute('data-caption');
+    captionElement.innerText = currentCaption;
 }
