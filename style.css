@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #fdfcfb;
+    --text-color: #333;
+    --accent-color: #d4a373; /* Um tom bronze/dourado sutil */
+    --transition: all 0.5s ease-in-out;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Splash Screen (Overlay) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.intro-content {
+    text-align: center;
+}
+
+.intro-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+#start-btn {
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid var(--text-color);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#start-btn:hover {
+    background: var(--text-color);
+    color: white;
+}
+
+/* Conteúdo Principal */
+.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.fade-in {
+    animation: fadeInContent 1.5s forwards;
+}
+
+/* Grid de Fotos Minimalista */
+.photo-grid {
+    max-width: 900px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.photo-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-item img {
+    width: 100%;
+    filter: grayscale(20%);
+    transition: var(--transition);
+}
+
+.photo-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.spotify-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
