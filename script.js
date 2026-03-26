@@ -1,5 +1,5 @@
 // Configuração do início do namoro: Ano, Mês (0-11), Dia
-const dataInicio = new Date(2025, 11, 29, 0, 0, 0); // Ex: 29 de Dezembro de 2025
+const dataInicio = new Date(2025, 12, 29, 0, 0, 0); // Ex: 29 de Dezembro de 2025
 
 document.getElementById('start-btn').addEventListener('click', function() {
     const overlay = document.getElementById('overlay');
