@@ -54,3 +54,23 @@ document.querySelectorAll('.polaroid, .text-moment').forEach(el => {
     el.style.transition = "all 0.8s ease-out";
     observer.observe(el);
 });
+
+
+let currentIdx = 0;
+
+function moveCarousel(direction) {
+    const track = document.getElementById('track1');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    currentIdx += direction;
+
+    if (currentIdx >= totalItems) {
+        currentIdx = 0;
+    } else if (currentIdx < 0) {
+        currentIdx = totalItems - 1;
+    }
+
+    const amountToMove = currentIdx * -100;
+    track.style.transform = `translateX(${amountToMove}%)`;
+}
