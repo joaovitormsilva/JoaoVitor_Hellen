@@ -1,0 +1,26 @@
+/* Container que ocupa mais espaço na tela */
+.carousel-container-wide {
+    width: 90%; 
+    max-width: 1000px;
+    margin: 80px auto;
+    position: relative;
+    overflow: hidden; /* Corta o que sair das bordas da tela */
+    padding: 20px 0;
+}
+
+.carousel-track-wide {
+    display: flex;
+    gap: 20px; /* Espaço entre as fotos */
+    transition: transform 0.5s ease-out;
+    cursor: grab;
+}
+
+.carousel-track-wide img {
+    width: 300px; /* Largura fixa para cada foto */
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px; /* Bordas arredondadas leves (minimalista) */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    flex-shrink: 0; /* Impede que as fotos esmaguem */
+}
+

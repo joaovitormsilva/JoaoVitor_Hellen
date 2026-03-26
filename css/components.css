@@ -1,0 +1,61 @@
+/* Overlay / Splash Screen */
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+    background-color: var(--bg-main);
+    flex-direction: column; gap: 20px;
+}
+
+#start-btn {
+    padding: 15px 40px;
+    background: transparent;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+#start-btn:hover {
+    background: var(--text-light);
+    color: var(--bg-main);
+}
+
+.text-moment {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+    line-height: 1.8;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+}
+
+.spotify-fixed {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    width: 300px; z-index: 999;
+}
+
+/* Botões flutuantes nas laterais */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.prev-wide { left: 10px; }
+.next-wide { right: 10px; }
