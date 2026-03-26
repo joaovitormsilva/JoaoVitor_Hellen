@@ -56,28 +56,18 @@ document.querySelectorAll('.polaroid, .text-moment').forEach(el => {
 });
 
 
-let currentIdx = 0;
+let scrollAmount = 0;
 
-function moveCarousel(direction) {
-    const track = document.getElementById('track1');
-    const items = track.querySelectorAll('.carousel-item');
-    const captionElement = document.getElementById('caption1');
-    const totalItems = items.length;
+function scrollCarousel(direction) {
+    const track = document.getElementById('wideTrack');
+    const step = 320; // Largura da foto (300) + gap (20)
+    const maxScroll = -(track.scrollWidth - track.parentElement.clientWidth);
 
-    currentIdx += direction;
+    scrollAmount += (direction * -step);
 
-    // Lógica de loop infinito
-    if (currentIdx >= totalItems) {
-        currentIdx = 0;
-    } else if (currentIdx < 0) {
-        currentIdx = totalItems - 1;
-    }
+    // Limites para não scrollar pro vazio
+    if (scrollAmount > 0) scrollAmount = 0;
+    if (scrollAmount < maxScroll) scrollAmount = maxScroll;
 
-    // Move o trilho das fotos
-    const amountToMove = currentIdx * -100;
-    track.style.transform = `translateX(${amountToMove}%)`;
-
-    // Atualiza a legenda com base no atributo 'data-caption' da foto atual
-    const currentCaption = items[currentIdx].getAttribute('data-caption');
-    captionElement.innerText = currentCaption;
+    track.style.transform = `translateX(${scrollAmount}px)`;
 }
