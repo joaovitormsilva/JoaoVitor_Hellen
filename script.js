@@ -60,7 +60,7 @@ let currentIdx = 0;
 
 function moveCarousel(direction) {
     const track = document.getElementById('track1');
-    const items = document.querySelectorAll('.carousel-item');
+    const items = track.querySelectorAll('.carousel-item');
     const totalItems = items.length;
 
     currentIdx += direction;

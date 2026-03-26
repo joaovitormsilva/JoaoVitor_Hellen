@@ -193,42 +193,56 @@ body {
 
 /* Container do Carrossel */
 .carousel-container {
-    max-width: 400px; /* Um pouco maior que a polaroid */
+    width: 350px; /* Largura fixa para manter o aspecto de polaroid */
     margin: 60px auto;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Isso aqui é o que "corta" as fotos que estão fora do quadro */
     background: var(--polaroid-bg);
     padding: 15px 15px 40px 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: rotate(1deg); /* Leve inclinação para combinar com as polaroids */
 }
 
 .carousel-track {
-    display: flex;
+    display: flex; /* Alinha as fotos uma ao lado da outra */
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
 .carousel-item {
-    min-width: 100%;
+    min-width: 100%; /* Cada item ocupa exatamente a largura do container */
+    box-sizing: border-box;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 400px;
+    width: 100%; 
+    height: 350px; /* Mantendo quadrado para parecer polaroid */
     object-fit: cover;
+    display: block; /* Remove espaços vazios embaixo da imagem */
 }
 
 /* Botões do Carrossel */
 .carousel-btn {
     position: absolute;
-    top: 50%;
+    top: 45%; /* Ajustado para centralizar na imagem, não no container todo */
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.3);
-    color: white;
+    background: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
+    color: #333;
     border: none;
-    padding: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background: white;
 }
 
 .btn-prev { left: 5px; }
