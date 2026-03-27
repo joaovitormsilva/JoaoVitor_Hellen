@@ -84,3 +84,54 @@
 
 .prev-wide { left: 10px; }
 .next-wide { right: 10px; }
+
+
+/* css/components.css */
+
+.counter-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(62, 42, 31, 0.3); /* Um leve fundo marrom médio */
+    margin: 40px 0;
+}
+
+#timer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--accent-gold);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; /* Para não quebrar em telas de celular */
+}
+
+.clock-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.clock-box .number {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1;
+}
+
+.clock-box .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    margin-top: 10px;
+    opacity: 0.8;
+}

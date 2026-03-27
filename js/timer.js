@@ -1,4 +1,6 @@
-const dataInicio = new Date(2025, 11, 29, 0, 0, 0); 
+// js/timer.js
+
+const dataInicio = new Date(2024, 11, 29, 0, 0, 0); // Mantendo 29 de Dezembro
 
 function atualizarContador() {
     const agora = new Date();
@@ -9,13 +11,13 @@ function atualizarContador() {
     const minutos = Math.floor((diferenca / 1000 / 60) % 60);
     const segundos = Math.floor((diferenca / 1000) % 60);
 
-    const clockElement = document.getElementById('clock');
-    if (clockElement) {
-        clockElement.innerText = `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-    }
+    // Atualiza cada elemento individualmente
+    document.getElementById('days').innerText = dias.toString().padStart(2, '0');
+    document.getElementById('hours').innerText = horas.toString().padStart(2, '0');
+    document.getElementById('minutes').innerText = minutos.toString().padStart(2, '0');
+    document.getElementById('seconds').innerText = segundos.toString().padStart(2, '0');
 }
 
-// Escuta o evento de início vindo do navigation.js
 window.addEventListener('siteStarted', () => {
     atualizarContador();
     setInterval(atualizarContador, 1000);
