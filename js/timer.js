@@ -1,5 +1,3 @@
-// js/timer.js
-
 const dataInicio = new Date(2025, 11, 29, 0, 0, 0); // Mantendo 29 de Dezembro
 
 function atualizarContador() {
