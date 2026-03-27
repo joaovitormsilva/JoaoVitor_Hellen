@@ -135,3 +135,36 @@
     margin-top: 10px;
     opacity: 0.8;
 }
+
+
+/* css/components.css */
+
+footer {
+    text-align: center;
+    padding: 120px 20px; /* Mais espaço para respirar */
+    margin-top: 50px;
+    border-top: 1px solid rgba(212, 163, 115, 0.2); /* Linha dourada bem sutil */
+}
+
+footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+/* Um pequeno coração pulsante no final */
+footer::after {
+    content: '❤️';
+    display: block;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

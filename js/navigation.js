@@ -26,7 +26,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.polaroid, .text-moment, .carousel-container-wide').forEach(el => {
+document.querySelectorAll('.polaroid, .text-moment, .carousel-container-wide','footer').forEach(el => {
     el.style.opacity = "0";
     el.style.transform = "translateY(30px)";
     el.style.transition = "all 0.8s ease-out";
