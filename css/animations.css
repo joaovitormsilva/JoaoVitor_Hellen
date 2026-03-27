@@ -1,0 +1,31 @@
+/* css/animations.css */
+
+/* Animação para o H1 da tela inicial */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Animação para o surgimento do conteúdo principal (Main) */
+@keyframes fadeInContent {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Classe auxiliar que usamos no JS */
+.fade-in {
+    animation: fadeInContent 1.2s forwards !important;
+    display: block !important;
+}
