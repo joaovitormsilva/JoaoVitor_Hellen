@@ -21,3 +21,13 @@ body {
     opacity: 0;
     display: none;
 }
+
+.fade-in {
+    display: block !important;
+    animation: fadeInContent 1.2s forwards;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
